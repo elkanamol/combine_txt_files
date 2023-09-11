@@ -42,12 +42,12 @@ def combine_files(ssh, source_dir, input_file, output_file) -> None:
             print(f"\r Reading imei: {imei} , Found!", end='\r', flush=True)
             debug_print(f"Reading imei: {imei}, Found!")
 
-            log_file_name = f"{imei}_log_file.txt"
+            log_file_name = f'{imei}'
             log_file_path = os.path.join(directory_path, log_file_name)
             debug_print(f"log_file_path: {log_file_path}")
 
             try:
-                command = f"cat {log_file_path}"
+                command = f'cat "$(ls -t {log_file_path}*.txt | head -1)"'
                 debug_print(f"command: {command}")
                 stdin, stdout, stderr = ssh.exec_command(command)
                 outlines = stdout.readlines()
