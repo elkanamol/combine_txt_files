@@ -5,6 +5,8 @@
 ## Log File Combiner
 
 This tool combines text log files for different IMEI numbers into a single output file.
+the tool design for files named by serial number and are stored in folders named by serial number.
+you can change the path to your path. 
 
 ## Usage
 `python combine_imei_logs.py [-h] [-c CSV] [-m MODEL] [-s ADDRESS] [-u USERNAME] [-d]
